@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Poppins Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Google Icons -->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS File -->
+		<link rel="stylesheet" href="./style.css" />
+		<title>Music Player</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="parent">
+				<div class="music-player">
+					<div class="title-bar">
+						<div>
+							<span class="material-icons down-arrow"> expand_more </span>
+						</div>
+						<div>Indie Rock Road Trip</div>
+						<div>
+							<span class="material-icons"> more_horiz </span>
+						</div>
+					</div>
+					<div class="track-name">
+						<div class="name">The Avengers Theme</div>
+						<div class="artist">Alan Silvestri</div>
+					</div>
+					<div class="progress-bar">
+						<div>1:24 | 4:45</div>
+						<div>
+							<div class="cl-parent">
+								<div class="cl-container">
+									<div class="circular-progress">
+										<div class="value-container">
+											<img src="./Images/Avengers.png" alt="avengers" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main-menu">
+						<div>
+							<span class="material-icons dnd"> do_not_disturb_on </span>
+						</div>
+						<div>
+							<span class="material-icons prev"> skip_previous </span>
+						</div>
+						<div>
+							<span class="material-icons play"> play_circle_filled </span>
+						</div>
+						<div><span class="material-icons next"> skip_next </span></div>
+						<div>
+							<span class="material-icons fav"> favorite_border </span>
+						</div>
+					</div>
+					<div class="extra-menu">
+						<div><span class="material-icons shuffle"> shuffle </span></div>
+						<div>
+							<span class="material-icons list"> format_list_bulleted </span>
+						</div>
+						<div>
+							<span class="material-icons volume"> volume_up </span>
+						</div>
+						<div>
+							<span class="material-icons loop"> loop </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- JS File -->
+		<script src="./script.js"></script>
+	</body>
+</html>
