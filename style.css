@@ -50,6 +50,7 @@
 	gap: 10px;
 }
 .progress-bar {
+	margin-top: 60px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -62,7 +63,7 @@
 	align-items: center;
 }
 .cl-container {
-	height: 350px;
+	height: 280px;
 	width: 400px;
 	background-color: transparent;
 	border-radius: 20px;
@@ -74,9 +75,9 @@
 	position: relative;
 	height: 250px;
 	width: 250px;
-	background-color: #ffd6bc;
-	box-shadow: 20px 20px 40px rgba(255, 214, 188, 0.4),
-		-20px -20px 40px rgba(255, 214, 188, 0.4);
+	background-color: #fee1ce;
+	box-shadow: 20px 20px 40px rgba(255, 214, 188, 0.3),
+		-20px -20px 40px rgba(255, 214, 188, 0.3);
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -104,6 +105,7 @@
 	border-radius: 20px;
 }
 .main-menu {
+	margin-top: 40px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
