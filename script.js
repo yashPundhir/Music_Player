@@ -44,3 +44,15 @@ function pauseSong() {
 	pause.style.display = "none";
 	play.style.marginLeft = "2.5px";
 }
+let favHollow = document.querySelector(".fav-hollow");
+let favFill = document.querySelector(".fav-fill");
+function like() {
+	favHollow.style.display = "none";
+	favFill.style.display = "flex";
+	favFill.style.marginTop = "3px";
+	favFill.style.marginRight = "5px";
+}
+function unlike() {
+	favHollow.style.display = "flex";
+	favFill.style.display = "none";
+}

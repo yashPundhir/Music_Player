@@ -129,10 +129,14 @@
 .next {
 	font-size: 50px;
 }
-.fav {
+.fav-hollow {
 	margin-top: 3px;
 	font-size: 30px;
 	opacity: 0.85;
+}
+.fav-fill {
+	font-size: 30px;
+	display: none;
 }
 .extra-menu {
 	margin-top: 40px;
