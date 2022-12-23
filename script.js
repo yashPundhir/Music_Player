@@ -3,6 +3,30 @@ let valueContainer = document.querySelector(".value-container");
 let progressStartValue = 0;
 let progressEndValue = 123;
 let speed = 1000;
+let song = document.querySelector(".song audio");
+let play = document.querySelector(".play");
+let pause = document.querySelector(".pause");
+let trackTime = document.querySelector(".track-time #time");
+let currTime = 0;
+function getCurrentTime() {
+	currTime = Math.floor(song.currentTime);
+	currTime = currTime + 1;
+	if (currTime < 60) {
+		if (currTime < 10) {
+			trackTime.textContent = `00 : 0${currTime}`;
+		} else {
+			trackTime.textContent = `00 : ${currTime}`;
+		}
+	} else if (currTime >= 60 && currTime < 120) {
+		if (currTime % 60 < 10) {
+			trackTime.textContent = `01 : 0${currTime % 60}`;
+		} else {
+			trackTime.textContent = `01 : ${currTime % 60}`;
+		}
+	} else {
+		trackTime.textContent = `02 : 0${currTime % 120}`;
+	}
+}
 // let progress = setInterval(() => {
 // 	progressStartValue = progressStartValue + 1;
 // 	// valueContainer.textContent = `${progressStartValue}%`;
@@ -16,15 +40,14 @@ let speed = 1000;
 // 		clearInterval(progress);
 // 	}
 // }, speed);
-let song = document.querySelector(".song audio");
-let play = document.querySelector(".play");
-let pause = document.querySelector(".pause");
+
 function playSong() {
 	song.play();
 	play.style.display = "none";
 	pause.style.display = "flex";
 	pause.style.marginLeft = "-2.5px";
 	let progress = setInterval(() => {
+		getCurrentTime();
 		progressStartValue = progressStartValue + 1;
 		// valueContainer.textContent = `${progressStartValue}%`;
 		{

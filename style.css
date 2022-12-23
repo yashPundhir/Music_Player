@@ -134,9 +134,14 @@
 	font-size: 30px;
 	opacity: 0.85;
 }
+#line {
+	margin-left: 20px;
+	margin-right: 20px;
+}
 .fav-fill {
 	font-size: 30px;
 	display: none;
+	color: #d82e2f;
 }
 .extra-menu {
 	margin-top: 40px;
