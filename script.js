@@ -24,19 +24,19 @@ function playSong() {
 	play.style.display = "none";
 	pause.style.display = "flex";
 	pause.style.marginLeft = "-2.5px";
-	// let progress = setInterval(() => {
-	// 	progressStartValue = progressStartValue + 1;
-	// 	valueContainer.textContent = `${progressStartValue}%`;
-	// 	{
-	// 		progressBar.style.background = `conic-gradient(
-	// 			#b0b0b0 ${(progressStartValue + 0.5) * 2.927}deg,
-	// 			#252525 ${(progressStartValue + 0.5) * 2.927}deg
-	// 	)`;
-	// 	}
-	// 	if (progressStartValue == progressEndValue) {
-	// 		clearInterval(progress);
-	// 	}
-	// }, speed);
+	let progress = setInterval(() => {
+		progressStartValue = progressStartValue + 1;
+		// valueContainer.textContent = `${progressStartValue}%`;
+		{
+			progressBar.style.background = `conic-gradient(
+				#b0b0b0 ${(progressStartValue + 0.5) * 2.927}deg,
+				#252525 ${(progressStartValue + 0.5) * 2.927}deg
+		)`;
+		}
+		if (progressStartValue == progressEndValue) {
+			clearInterval(progress);
+		}
+	}, speed);
 }
 function pauseSong() {
 	song.pause();
