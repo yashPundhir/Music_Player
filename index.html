@@ -40,7 +40,7 @@
 					</div>
 					<div class="progress-bar">
 						<div>
-							1&nbsp;:&nbsp;24 &nbsp;&nbsp; | &nbsp;&nbsp; 4&nbsp;:&nbsp;45
+							00&nbsp;:&nbsp;00 &nbsp;&nbsp; | &nbsp;&nbsp; 02&nbsp;:&nbsp;03
 						</div>
 						<div>
 							<div class="cl-parent">
@@ -54,6 +54,15 @@
 							</div>
 						</div>
 					</div>
+					<div class="song">
+						<audio>
+							<source
+								src="./Songs/avengers-theme-song-download.mp3"
+								type="audio/mpeg"
+							/>
+							Your browser does not support the audio element.
+						</audio>
+					</div>
 					<div class="main-menu">
 						<div>
 							<span class="material-icons dnd"> do_not_disturb_on </span>
@@ -62,7 +71,12 @@
 							<span class="material-icons prev"> skip_previous </span>
 						</div>
 						<div>
-							<span class="material-icons play"> play_circle_filled </span>
+							<button onclick="playSong()">
+								<span class="material-icons play"> play_circle_filled </span>
+							</button>
+							<button onclick="pauseSong()">
+								<span class="material-icons pause"> pause_circle </span>
+							</button>
 						</div>
 						<div><span class="material-icons next"> skip_next </span></div>
 						<div>
