@@ -8,6 +8,7 @@ let play = document.querySelector(".play");
 let pause = document.querySelector(".pause");
 let trackTime = document.querySelector(".track-time #time");
 let currTime = 0;
+let firstTime = true;
 function getCurrentTime() {
 	currTime = Math.floor(song.currentTime);
 	currTime = currTime + 1;
@@ -48,7 +49,13 @@ function playSong() {
 	pause.style.marginLeft = "-2.5px";
 	let progress = setInterval(() => {
 		getCurrentTime();
-		progressStartValue = progressStartValue + 1;
+		// progressStartValue = progressStartValue + 1;
+		if (firstTime) {
+			progressStartValue = Math.round(song.currentTime) + 1;
+		} else {
+			progressStartValue = Math.round(song.currentTime);
+		}
+
 		// valueContainer.textContent = `${progressStartValue}%`;
 		{
 			progressBar.style.background = `conic-gradient(
@@ -62,6 +69,7 @@ function playSong() {
 	}, speed);
 }
 function pauseSong() {
+	firstTime = false;
 	song.pause();
 	play.style.display = "block";
 	pause.style.display = "none";
