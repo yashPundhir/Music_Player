@@ -175,7 +175,168 @@ button {
 /* ************************************** */
 /* ************************************** */
 /* ************************************** */
+@media (width <=500px) {
+	.container {
+		height: 100%;
+		background: radial-gradient(circle at left top, #7c8992, #1b242d);
+		color: #f0f0f0;
+	}
 
+	.parent {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.music-player {
+		background-color: transparent;
+		border-radius: 45px;
+		box-shadow: inset -5px -5px 30px #000, inset 10px 10px 40px #000,
+			-20px -20px 30px #1d262f, 20px 20px 30px #151c21;
+
+		width: 320px;
+		height: 605px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.material-icons {
+		color: #f0f0f0;
+	}
+	.title-bar {
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: 35px;
+	}
+	.down-arrow {
+		font-size: 30px;
+		margin-top: -2px;
+	}
+	.track-name {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+	.progress-bar {
+		margin-top: 30px;
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.cl-parent {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.cl-container {
+		height: 220px;
+		width: 220px;
+		background-color: transparent;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.circular-progress {
+		position: relative;
+		height: 200px;
+		width: 200px;
+		background-color: #252525;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.circular-progress:before {
+		content: "";
+		position: absolute;
+		height: 94%;
+		width: 94%;
+		left: 6px;
+		background-color: #fefefe;
+		border-radius: 50%;
+	}
+	.value-container {
+		position: relative;
+		font-size: 50px;
+		color: #231c3d;
+	}
+	.value-container img {
+		margin-top: 20px;
+		margin-left: 30px;
+		width: 70%;
+		height: 70%;
+		border-radius: 20px;
+	}
+	.main-menu {
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.dnd {
+		margin-top: 2px;
+		opacity: 0.3;
+		font-size: 24px;
+	}
+	.prev {
+		opacity: 0.3;
+		font-size: 40px;
+	}
+	.play {
+		font-size: 65px;
+	}
+	.pause {
+		font-size: 65px;
+		display: none;
+	}
+	.next {
+		font-size: 40px;
+	}
+	.fav-hollow {
+		margin-top: 3px;
+		font-size: 24px;
+		opacity: 0.85;
+	}
+	#line {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.fav-fill {
+		font-size: 24px;
+		display: none;
+		color: #d82e2f;
+	}
+	.extra-menu {
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.shuffle {
+		font-size: 24px;
+		opacity: 0.3;
+	}
+	.list {
+		font-size: 26px;
+		opacity: 0.3;
+	}
+	.volume {
+		font-size: 28px;
+	}
+	.loop {
+		font-size: 24px;
+		opacity: 0.4;
+	}
+}
 /* 
 #A16742
 #472A18
