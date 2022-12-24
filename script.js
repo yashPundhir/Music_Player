@@ -1,14 +1,34 @@
+let songs = [
+	{
+		songNumber: 1,
+		songName: "The Avengers Theme",
+		artistName: "Alan Silvestri",
+		duration: 123,
+		angle: 2.927,
+		querySelectorName: ".song #avengers",
+	},
+	{
+		songNumber: 2,
+		songName: "Shape Of You",
+		artistName: "Ed Sheeran",
+		duration: 31,
+		angle: 11.613,
+		querySelectorName: ".song #shape-of-you",
+	},
+];
+let index = 1;
 let progressBar = document.querySelector(".circular-progress");
 let valueContainer = document.querySelector(".value-container");
 let progressStartValue = 0;
-let progressEndValue = 123;
+let progressEndValue = songs[index].duration;
+let songEndTime = document.querySelector(".track-time #end");
 let speed = 1000;
-let song = document.querySelector(".song audio");
+let song = document.querySelector(songs[index].querySelectorName);
 let play = document.querySelector(".play");
 let pause = document.querySelector(".pause");
 let trackTime = document.querySelector(".track-time #time");
 let currTime = 0;
-let firstTime = true;
+// let firstTime = true;
 function getCurrentTime() {
 	currTime = Math.floor(song.currentTime);
 	currTime = currTime + 1;
@@ -29,6 +49,11 @@ function getCurrentTime() {
 	}
 }
 function playSong() {
+	if (index == 1) {
+		songEndTime.textContent = `0${Math.floor(songs[index].duration / 60)} : ${
+			songs[index].duration % 60
+		}`;
+	}
 	song.play();
 	play.style.display = "none";
 	pause.style.display = "flex";
@@ -38,8 +63,8 @@ function playSong() {
 		progressStartValue = Math.floor(song.currentTime) + 1;
 		// valueContainer.textContent = `${progressStartValue}%`;
 		progressBar.style.background = `conic-gradient(
-				#b0b0b0 ${(progressStartValue + 0.5) * 2.927}deg,
-				#252525 ${(progressStartValue + 0.5) * 2.927}deg
+				#b0b0b0 ${(progressStartValue + 0.5) * songs[index].angle}deg,
+				#252525 ${(progressStartValue + 0.5) * songs[index].angle}deg
 		)`;
 		if (progressStartValue == progressEndValue) {
 			clearInterval(progress);
@@ -47,7 +72,7 @@ function playSong() {
 	}, speed);
 }
 function pauseSong() {
-	firstTime = false;
+	// firstTime = false;
 	progressStartValue--;
 	song.pause();
 	play.style.display = "block";
