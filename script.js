@@ -54,6 +54,7 @@ function playSong() {
 			songs[index].duration % 60
 		}`;
 	}
+
 	song.play();
 	play.style.display = "none";
 	pause.style.display = "flex";
@@ -68,6 +69,11 @@ function playSong() {
 		)`;
 		if (progressStartValue == progressEndValue) {
 			clearInterval(progress);
+			play.style.display = "block";
+			pause.style.display = "none";
+			play.style.marginLeft = "2.5px";
+			progressBar.style.background = "#252525";
+			trackTime.textContent = `00 : 00`;
 		}
 	}, speed);
 }
