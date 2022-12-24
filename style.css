@@ -26,7 +26,7 @@
 		-20px -20px 30px #1d262f, 20px 20px 30px #151c21;
 
 	width: 380px;
-	height: 800px;
+	height: 720px;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -36,14 +36,14 @@
 .title-bar {
 	display: flex;
 	justify-content: space-evenly;
-	margin-top: 50px;
+	margin-top: 35px;
 }
 .down-arrow {
 	font-size: 36px;
 	margin-top: -5px;
 }
 .track-name {
-	margin-top: 40px;
+	margin-top: 25px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -51,9 +51,9 @@
 	gap: 10px;
 }
 .progress-bar {
-	margin-top: 50px;
+	margin-top: 40px;
 	display: flex;
-	gap: 15px;
+	gap: 10px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -105,7 +105,7 @@
 	border-radius: 20px;
 }
 .main-menu {
-	margin-top: 35px;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -144,7 +144,7 @@
 	color: #d82e2f;
 }
 .extra-menu {
-	margin-top: 40px;
+	margin-top: 25px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -170,6 +170,12 @@ button {
 	outline: none;
 	cursor: pointer;
 }
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+
 /* 
 #A16742
 #472A18

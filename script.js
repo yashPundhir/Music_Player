@@ -28,20 +28,6 @@ function getCurrentTime() {
 		trackTime.textContent = `02 : 0${currTime % 120}`;
 	}
 }
-// let progress = setInterval(() => {
-// 	progressStartValue = progressStartValue + 1;
-// 	// valueContainer.textContent = `${progressStartValue}%`;
-// 	{
-// 		progressBar.style.background = `conic-gradient(
-//       #b0b0b0 ${(progressStartValue + 0.5) * 2.927}deg,
-//       #252525 ${(progressStartValue + 0.5) * 2.927}deg
-//   )`;
-// 	}
-// 	if (progressStartValue == progressEndValue) {
-// 		clearInterval(progress);
-// 	}
-// }, speed);
-
 function playSong() {
 	song.play();
 	play.style.display = "none";
@@ -49,20 +35,12 @@ function playSong() {
 	pause.style.marginLeft = "-2.5px";
 	let progress = setInterval(() => {
 		getCurrentTime();
-		// progressStartValue = progressStartValue + 1;
-		if (firstTime) {
-			progressStartValue = Math.round(song.currentTime) + 1;
-		} else {
-			progressStartValue = Math.round(song.currentTime);
-		}
-
+		progressStartValue = Math.floor(song.currentTime) + 1;
 		// valueContainer.textContent = `${progressStartValue}%`;
-		{
-			progressBar.style.background = `conic-gradient(
+		progressBar.style.background = `conic-gradient(
 				#b0b0b0 ${(progressStartValue + 0.5) * 2.927}deg,
 				#252525 ${(progressStartValue + 0.5) * 2.927}deg
 		)`;
-		}
 		if (progressStartValue == progressEndValue) {
 			clearInterval(progress);
 		}
@@ -70,6 +48,7 @@ function playSong() {
 }
 function pauseSong() {
 	firstTime = false;
+	progressStartValue--;
 	song.pause();
 	play.style.display = "block";
 	pause.style.display = "none";
