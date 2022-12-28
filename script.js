@@ -73,6 +73,9 @@ function playPrev() {
 		prev.style.opacity = "0.3";
 	}
 }
+function songMute() {
+	song.muted = true;
+}
 function playSong() {
 	if (index == 1) {
 		songEndTime.textContent = `0${Math.floor(songs[index].duration / 60)} : ${
