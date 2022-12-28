@@ -16,16 +16,22 @@ let songs = [
 		querySelectorName: ".song #shape-of-you",
 	},
 ];
-let index = 1;
+let index = 0;
 let progressBar = document.querySelector(".circular-progress");
 let valueContainer = document.querySelector(".value-container");
 let progressStartValue = 0;
-let progressEndValue = songs[index].duration;
+//let progressEndValue = songs[index].duration; //******** */
+let progressEndValue = 0;
 let songEndTime = document.querySelector(".track-time #end");
 let speed = 1000;
-let song = document.querySelector(songs[index].querySelectorName);
+//let song = document.querySelector(songs[index].querySelectorName);//******
+let song = 0;
 let play = document.querySelector(".play");
 let pause = document.querySelector(".pause");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let prevBtn = document.querySelector("#prevBtn");
+let nextBtn = document.querySelector("#nextBtn");
 let trackTime = document.querySelector(".track-time #time");
 let currTime = 0;
 // let firstTime = true;
@@ -48,13 +54,28 @@ function getCurrentTime() {
 		trackTime.textContent = `02 : 0${currTime % 120}`;
 	}
 }
+function playNext() {
+	//if (index == 0) {
+	// index = index + 1;
+	next.style.opacity = "0.3";
+	prev.style.opacity = "1";
+	//}
+}
+function playPrev() {
+	//if (index == 1) {
+	// index = index - 1;
+	next.style.opacity = "1";
+	prev.style.opacity = "0.3";
+	//}
+}
 function playSong() {
 	if (index == 1) {
 		songEndTime.textContent = `0${Math.floor(songs[index].duration / 60)} : ${
 			songs[index].duration % 60
 		}`;
 	}
-
+	progressEndValue = songs[index].duration;
+	song = document.querySelector(songs[index].querySelectorName);
 	song.play();
 	play.style.display = "none";
 	pause.style.display = "flex";
