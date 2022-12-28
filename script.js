@@ -58,8 +58,10 @@ function getCurrentTime() {
 function playNext() {
 	if (index == 0) {
 		song.pause();
+		progressBar.style.background = "#252525";
+		trackTime.textContent = `00 : 00`;
 		index = index + 1;
-		progressStartValue = 0;
+		song.currentTime = 0;
 		playSong();
 		next.style.opacity = "0.3";
 		prev.style.opacity = "1";
@@ -68,8 +70,10 @@ function playNext() {
 function playPrev() {
 	if (index == 1) {
 		song.pause();
+		progressBar.style.background = "#252525";
+		trackTime.textContent = `00 : 00`;
 		index = index - 1;
-		progressStartValue = 0;
+		song.currentTime = 0;
 		playSong();
 		next.style.opacity = "1";
 		prev.style.opacity = "0.3";
@@ -85,6 +89,7 @@ function songUnmute() {
 	mute.style.display = "none";
 	volume.style.display = "flex";
 }
+function loop() {}
 function playSong() {
 	if (index == 1) {
 		songEndTime.textContent = `0${Math.floor(songs[index].duration / 60)} : ${
