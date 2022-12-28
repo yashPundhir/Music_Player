@@ -23,9 +23,9 @@ let progressStartValue = 0;
 //let progressEndValue = songs[index].duration; //******** */
 let progressEndValue = 0;
 let songEndTime = document.querySelector(".track-time #end");
-let speed = 1000;
-//let song = document.querySelector(songs[index].querySelectorName);//******
-let song = 0;
+const speed = 1000;
+let song = document.querySelector(songs[index].querySelectorName); //******
+// let song = 0;
 let play = document.querySelector(".play");
 let pause = document.querySelector(".pause");
 let prev = document.querySelector(".prev");
@@ -34,7 +34,6 @@ let prevBtn = document.querySelector("#prevBtn");
 let nextBtn = document.querySelector("#nextBtn");
 let trackTime = document.querySelector(".track-time #time");
 let currTime = 0;
-// let firstTime = true;
 function getCurrentTime() {
 	currTime = Math.floor(song.currentTime);
 	currTime = currTime + 1;
@@ -55,18 +54,24 @@ function getCurrentTime() {
 	}
 }
 function playNext() {
-	//if (index == 0) {
-	// index = index + 1;
-	next.style.opacity = "0.3";
-	prev.style.opacity = "1";
-	//}
+	if (index == 0) {
+		song.pause();
+		index = index + 1;
+		progressStartValue = 0;
+		playSong();
+		next.style.opacity = "0.3";
+		prev.style.opacity = "1";
+	}
 }
 function playPrev() {
-	//if (index == 1) {
-	// index = index - 1;
-	next.style.opacity = "1";
-	prev.style.opacity = "0.3";
-	//}
+	if (index == 1) {
+		song.pause();
+		index = index - 1;
+		progressStartValue = 0;
+		playSong();
+		next.style.opacity = "1";
+		prev.style.opacity = "0.3";
+	}
 }
 function playSong() {
 	if (index == 1) {
@@ -99,7 +104,6 @@ function playSong() {
 	}, speed);
 }
 function pauseSong() {
-	// firstTime = false;
 	progressStartValue--;
 	song.pause();
 	play.style.display = "block";
