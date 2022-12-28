@@ -160,6 +160,10 @@
 .volume {
 	font-size: 35px;
 }
+.mute {
+	font-size: 35px;
+	display: none;
+}
 .loop {
 	font-size: 30px;
 	opacity: 0.4;

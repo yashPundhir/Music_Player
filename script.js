@@ -30,6 +30,8 @@ let play = document.querySelector(".play");
 let pause = document.querySelector(".pause");
 let prev = document.querySelector(".prev");
 let next = document.querySelector(".next");
+let volume = document.querySelector(".volume");
+let mute = document.querySelector(".mute");
 let prevBtn = document.querySelector("#prevBtn");
 let nextBtn = document.querySelector("#nextBtn");
 let trackTime = document.querySelector(".track-time #time");
@@ -75,6 +77,13 @@ function playPrev() {
 }
 function songMute() {
 	song.muted = true;
+	volume.style.display = "none";
+	mute.style.display = "flex";
+}
+function songUnmute() {
+	song.muted = false;
+	mute.style.display = "none";
+	volume.style.display = "flex";
 }
 function playSong() {
 	if (index == 1) {
