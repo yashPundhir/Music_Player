@@ -57,6 +57,10 @@ function getCurrentTime() {
 }
 function playNext() {
 	if (index == 0) {
+		document.querySelector(".track-name .name").textContent =
+			songs[index + 1].songName;
+		document.querySelector(".track-name .artist").textContent =
+			songs[index + 1].artistName;
 		song.pause();
 		progressBar.style.background = "#252525";
 		trackTime.textContent = `00 : 00`;
@@ -69,6 +73,10 @@ function playNext() {
 }
 function playPrev() {
 	if (index == 1) {
+		document.querySelector(".track-name .name").textContent =
+			songs[index - 1].songName;
+		document.querySelector(".track-name .artist").textContent =
+			songs[index - 1].artistName;
 		song.pause();
 		progressBar.style.background = "#252525";
 		trackTime.textContent = `00 : 00`;
