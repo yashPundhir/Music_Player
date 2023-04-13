@@ -6,6 +6,7 @@ let songs = [
 		duration: 123,
 		angle: 2.927,
 		querySelectorName: ".song #avengers",
+		src: "./Images/Avengers.png",
 	},
 	{
 		songNumber: 2,
@@ -14,11 +15,14 @@ let songs = [
 		duration: 31,
 		angle: 11.613,
 		querySelectorName: ".song #shape-of-you",
+		src: "./Images/shapeOfYou.png",
 	},
 ];
 let index = 0;
 let progressBar = document.querySelector(".circular-progress");
+//let beforeStyles = window.getComputedStyle(progressBar, ":before");
 let valueContainer = document.querySelector(".value-container");
+let songImage = document.querySelector(".value-container img");
 let progressStartValue = 0;
 //let progressEndValue = songs[index].duration; //******** */
 let progressEndValue = 0;
@@ -61,6 +65,13 @@ function playNext() {
 			songs[index + 1].songName;
 		document.querySelector(".track-name .artist").textContent =
 			songs[index + 1].artistName;
+		songImage.src = songs[index + 1].src;
+		progressBar.style.setProperty("--before-bg-color", "#00B8EA");
+		songImage.style.width = "65%";
+		songImage.style.height = "65%";
+		songImage.style.objectFit = "contain";
+		songImage.style.marginTop = "10px";
+		songImage.style.marginLeft = "45px";
 		song.pause();
 		progressBar.style.background = "#252525";
 		trackTime.textContent = `00 : 00`;
@@ -77,6 +88,13 @@ function playPrev() {
 			songs[index - 1].songName;
 		document.querySelector(".track-name .artist").textContent =
 			songs[index - 1].artistName;
+		songImage.src = songs[index - 1].src;
+		progressBar.style.setProperty("--before-bg-color", "#fefefe");
+		songImage.style.width = "65%";
+		songImage.style.height = "65%";
+		songImage.style.objectFit = "contain";
+		songImage.style.marginTop = "10px";
+		songImage.style.marginLeft = "45px";
 		song.pause();
 		progressBar.style.background = "#252525";
 		trackTime.textContent = `00 : 00`;
