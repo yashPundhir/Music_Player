@@ -89,9 +89,16 @@
 	height: 94%;
 	width: 94%;
 	left: 7.5px;
-	background-color: #fefefe;
+	/* background-color: #fefefe; */
+	background-color: var(--before-bg-color, #fefefe);
 	border-radius: 50%;
 }
+/* .circular-progress:before.cyan {
+	background: linear-gradient(to bottom right, #06aece, #03697d);
+}
+.circular-progress:before.white {
+	background: #fefefe;
+} */
 .value-container {
 	position: relative;
 	font-size: 50px;
