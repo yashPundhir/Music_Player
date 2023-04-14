@@ -272,7 +272,8 @@ button {
 		height: 94%;
 		width: 94%;
 		left: 6px;
-		background-color: #fefefe;
+		/* background-color: #fefefe; */
+		background-color: var(--before-bg-color, #fefefe);
 		border-radius: 50%;
 	}
 	.value-container {
